@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Oleg Mikhaylov](https://up.htmlacademy.ru/javascript/27/user/1487847).
-* Наставник: `Неизвестно`.
+* Наставник: [Павел Лукин](https://htmlacademy.ru/profile/id1313529).
 
 ---
 
