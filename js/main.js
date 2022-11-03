@@ -58,22 +58,16 @@ const getRandomArrayElement = (array) => array[randomInteger(0, array.length - 1
 
 const createMessage = () => Array.from({ length: randomInteger(MESSAGE_QUANTITY.MIN, MESSAGE_QUANTITY.MAX) }, () => getRandomArrayElement(COMMENTS)).join(' ');
 
-const generateComments = () => {
-  const array = [];
-  for (let i = 0; i <= randomInteger(COMMENTS_QUANTITY.MIN, COMMENTS_QUANTITY.MAX); i++) {
+const generateComment = (i) => ({
+  id: i,
+  avatar: `img/avatar-${randomInteger(1, AVATAR_QUANTITY)}.svg`,
+  message : createMessage(),
+  name: NAME_OF_USERS[randomInteger(0, NAME_OF_USERS.length - 1)]
+});
 
-    const commentItem = {
-      id: i,
-      avatar: `img/avatar-${randomInteger(1, AVATAR_QUANTITY)}.svg`,
-      message : createMessage(),
-      name: NAME_OF_USERS[randomInteger(0, NAME_OF_USERS.length - 1)]
-    };
-    array.push(commentItem);
-  }
-  return array;
-};
+const generateComments = () => Array.from({ length: randomInteger(COMMENTS_QUANTITY.MIN, COMMENTS_QUANTITY.MAX)}, (_, index) => generateComment(index + 1));
 
-const descriptionImage = (i) => ({
+const createPhoto = (i) => ({
   id: i,
   url:`photos/${i}.jpg`,
   description: 'Photo Like',
@@ -81,12 +75,8 @@ const descriptionImage = (i) => ({
   comments: generateComments(),
 });
 
-const arrayOfObjects = () => {
-  const array = [];
-  for (let i = 1; i <= PICTURE_QUANTITY; i++) {
-    array.push(descriptionImage(i));
-  }
-  return array;
-};
+const arrayOfObjects = () => Array.from({ length: PICTURE_QUANTITY }, (_, index) => createPhoto(index + 1));
+
 arrayOfObjects();
 generateComments();
+
