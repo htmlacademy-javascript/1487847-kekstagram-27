@@ -1,10 +1,6 @@
-import {createPhotos} from './data.js';
-
 const picturesContain = document.querySelector('.pictures'); // ишем секцию в которую нужно вставить
 
 const onePictureMain = document.querySelector('#picture').content.querySelector('.picture');
-
-const miniatures = createPhotos();
 
 const createMiniatures = (miniatureProps) => {
   miniatureProps.forEach((oneMiniature) => {
@@ -21,5 +17,5 @@ const createMiniatures = (miniatureProps) => {
   });
 };
 
-export {createMiniatures,miniatures};
+export {createMiniatures};
 

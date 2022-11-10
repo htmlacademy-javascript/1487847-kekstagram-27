@@ -1,6 +1,7 @@
 import {createPhotos} from './data.js';
-import {createMiniatures, miniatures} from './popup.js';
-createPhotos();
+import {createMiniatures} from './popup.js';
+
+const miniatures = createPhotos();
 createMiniatures(miniatures);
 
 

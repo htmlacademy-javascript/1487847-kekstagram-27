@@ -61,7 +61,4 @@ const createPhoto = (i) => ({
 
 const createPhotos = () => Array.from({ length: PICTURE_QUANTITY }, (_, index) => createPhoto(index + 1));
 
-createPhotos();
-generateComments();
-
 export {createPhotos};
