@@ -1,6 +1,6 @@
 import {createPhotos} from './data.js';
-import {createOneMiniature} from './popup.js';
+import {createMiniatures, miniatures} from './popup.js';
 createPhotos();
-createOneMiniature();
+createMiniatures(miniatures);
 
 
