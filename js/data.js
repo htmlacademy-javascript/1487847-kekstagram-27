@@ -22,6 +22,17 @@ const NAME_OF_USERS = [
   'София',
   'Александр'
 ];
+const DESCRIPRION_PHOTO = [
+  'Не повезло не фортануло',
+  'С макарошками, нет с пюрешкой',
+  'Хочу поплавок',
+  'Вот это прикол!',
+  'Это Люба говорит',
+  'Дверь мне запили как выпилил',
+  'Все собрались, только тебя не хватате, дружок приходи на пикничёк',
+  'Сегодня в завтрашней день не все могут смотреть, точнее смотреть могут все, но видят не все',
+];
+
 
 const MESSAGE_QUANTITY = {
   MIN: 1,
@@ -54,7 +65,7 @@ const generateComments = () => Array.from({ length: randomInteger(COMMENTS_QUANT
 const createPhoto = (i) => ({
   id: i,
   url:`photos/${i}.jpg`,
-  description: 'Photo Like',
+  description: DESCRIPRION_PHOTO[randomInteger(0, DESCRIPRION_PHOTO.length - 1)],
   likes: randomInteger(LIKES_QUANTITY.MIN, LIKES_QUANTITY.MAX),
   comments: generateComments(),
 });
